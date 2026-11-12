@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NYALA – Nyalakan Semangat Belajarmu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F5FB;--sf:#FFFFFF;--tx:#1D2145;--mu:#59607F;--fl:#E8590C;--fl2:#FFC145;--ln:#D9DEEE;--ok:#1F7A4D;
+box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121528;--sf:#1C2040;--tx:#EEF0FB;--mu:#A9B0D0;--fl:#FF8A3D;--ln:#323862;--ok:#6FD3A0}}
+:root[data-theme="dark"]{--bg:#121528;--sf:#1C2040;--tx:#EEF0FB;--mu:#A9B0D0;--fl:#FF8A3D;--ln:#323862;--ok:#6FD3A0}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 "Nunito Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--sf);z-index:10}
+h1,h2,h3{font-family:"Baloo 2","Trebuchet MS",system-ui,sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.6rem,4.5vw,2.2rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0 0 1em;max-width:68ch}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--sf);border-bottom:1px solid var(--ln)}
+.bar{max-width:1040px;margin:0 auto;padding:10px 16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:8px;font:800 1.5rem "Baloo 2",sans-serif;color:var(--tx);text-decoration:none}
+.btn{display:inline-block;background:var(--fl);color:#fff;border:0;border-radius:999px;padding:.55em 1.2em;font:700 1rem "Nunito Sans",sans-serif;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--tx);border:2px solid var(--ln)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--fl2);outline-offset:2px}
+nav{max-width:1040px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:6px 12px 0;scrollbar-width:thin}
+nav a{flex:none;padding:8px 12px;color:var(--mu);text-decoration:none;font-weight:700;font-size:.95rem;border-bottom:3px solid transparent}
+nav a[aria-current="page"]{color:var(--tx);border-bottom-color:var(--fl)}
+main{max-width:1040px;margin:0 auto;padding:28px 16px 48px;min-height:70vh}
+.hero{display:grid;gap:24px;align-items:center;grid-template-columns:1fr}
+@media(min-width:760px){.hero{grid-template-columns:1.4fr 1fr}}
+.lead{font-size:1.2rem;color:var(--mu)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:22px 0}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:16px 18px}
+.card h3{margin-bottom:.25em}.card p{margin:0;color:var(--mu);font-size:.97rem}
+a.card{color:inherit;text-decoration:none;display:block;border-left:6px solid var(--fl)}
+a.card:hover{border-color:var(--fl2);border-left-color:var(--fl)}
+.quote{border-left:6px solid var(--fl2);padding:4px 0 4px 16px;font-size:1.15rem;font-style:italic;margin:20px 0}
+.q{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.q p{margin:0 0 8px;font-weight:600}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{flex:1 1 90px;background:var(--bg);color:var(--tx);border:2px solid var(--ln);border-radius:10px;padding:8px;font:600 .9rem "Nunito Sans",sans-serif;cursor:pointer}
+.opts button[aria-pressed="true"]{background:var(--fl);border-color:var(--fl);color:#fff}
+.res{background:var(--sf);border:2px solid var(--fl);border-radius:14px;padding:16px 18px;margin-top:16px}
+.big{font:800 2.4rem "Baloo 2",sans-serif;color:var(--fl)}
+details{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:12px 16px;margin:10px 0}
+summary{cursor:pointer;font-weight:700}
+details[open]{border-color:var(--fl)}
+details p{margin:10px 0 0;color:var(--mu)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;background:var(--sf)}
+th,td{border:1px solid var(--ln);padding:10px;text-align:left;vertical-align:top}
+th{background:var(--bg)}td[contenteditable]{min-height:42px}
+.note{background:var(--sf);border:1px dashed var(--fl);border-radius:12px;padding:12px 16px;margin:18px 0;font-size:.95rem}
+.pg{display:none}.pg.on{display:block}
+footer{text-align:center;color:var(--mu);padding:24px 16px calc(24px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--ln);font-size:.9rem}
+ol.m{padding-left:1.2em}ol.m li{margin-bottom:.4em}
+@media print{header,footer,.noprint{display:none}body::before{display:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="bar">
+  <a class="brand" href="#beranda"><svg width="28" height="34" viewBox="0 0 28 34" aria-hidden="true"><path d="M14 1c1 7 11 11 11 21a11 11 0 0 1-22 0c0-5 3-8 5-10 0 3 1 5 3 6-1-6 0-12 3-17z" fill="#E8590C"/><path d="M14 17c1 4 5 6 5 10a5 5 0 0 1-10 0c0-3 3-5 5-10z" fill="#FFC145"/></svg>NYALA</a>
+  <a class="btn" href="#konselor">Ngobrol BK</a>
+ </div>
+ <nav id="nav" aria-label="Menu utama"></nav>
+</header>
+
+<main>
+<section class="pg" id="beranda">
+ <div class="hero">
+  <div>
+   <h1>Lagi malas? Itu wajar.</h1>
+   <p class="lead">Semangat belajar tidak bisa dipaksa, tetapi bisa dinyalakan. Di sini kamu mengenali dirimu, menemukan alasanmu sendiri, dan mencoba langkah kecil yang nyata.</p>
+   <a class="btn" href="#cek">Mulai cek motivasiku</a>
+  </div>
+  <svg viewBox="0 0 28 34" role="img" aria-label="Maskot api NYALA" style="max-width:220px;justify-self:center"><path d="M14 1c1 7 11 11 11 21a11 11 0 0 1-22 0c0-5 3-8 5-10 0 3 1 5 3 6-1-6 0-12 3-17z" fill="#E8590C"/><path d="M14 17c1 4 5 6 5 10a5 5 0 0 1-10 0c0-3 3-5 5-10z" fill="#FFC145"/><circle cx="11" cy="24" r="1" fill="#1D2145"/><circle cx="17" cy="24" r="1" fill="#1D2145"/><path d="M12 27q2 1.6 4 0" stroke="#1D2145" fill="none" stroke-linecap="round"/></svg>
+ </div>
+ <p class="quote">“Semangat belajar tidak bisa dipaksa, tetapi bisa dinyalakan: dengan alasan yang kuat, cara yang tepat, dan teman yang mendampingi.”</p>
+ <h2>Empat prinsip NYALA</h2>
+ <div class="grid">
+  <div class="card"><h3>Dari dalam diri</h3><p>Kamu menemukan alasanmu sendiri, bukan sekadar mengejar nilai.</p></div>
+  <div class="card"><h3>Langkah kecil</h3><p>Target dan jurus dibuat kecil dan nyata.</p></div>
+  <div class="card"><h3>Tanpa melabeli</h3><p>Hasil angket bersifat pribadi, bukan vonis.</p></div>
+  <div class="card"><h3>Selalu ada teman</h3><p>Guru BK siap mendampingi kapan pun kamu butuh.</p></div>
+ </div>
+ <h2>Jelajahi</h2>
+ <div class="grid" id="menu"></div>
+ <h2>Bagikan NYALA</h2>
+ <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+  <div id="qrbox" style="background:#fff;padding:12px;border-radius:12px;line-height:0"></div>
+  <div style="flex:1 1 220px"><h3>Pindai untuk membuka</h3><p>Arahkan kamera HP ke kode ini. Cocok ditempel di kelas atau ruang BK.</p><p class="noprint" style="margin-top:10px"><button class="btn alt" onclick="window.print()">Cetak</button></p></div>
+ </div>
+</section>
+
+<section class="pg" id="cek">
+ <h2>Cek Motivasiku</h2>
+ <p>Baca tiap pernyataan, lalu pilih yang paling sesuai dengan dirimu <b>akhir-akhir ini</b>. Tidak ada jawaban benar atau salah. Skor dihitung otomatis di layarmu dan tidak dikirim ke siapa pun.</p>
+ <div id="qs"></div>
+ <div class="res" id="hasil" aria-live="polite"><b>Jawab semua 10 pernyataan</b> untuk melihat skormu.</div>
+ <p class="noprint" style="margin-top:12px"><button class="btn alt" id="reset">Ulangi</button></p>
+</section>
+
+<section class="pg" id="alasan">
+ <h2>Alasanku Belajar</h2>
+ <p>Orang yang tahu <i>untuk apa</i> ia belajar lebih kuat saat bosan datang. Alasan terbaik adalah alasan yang kamu temukan sendiri.</p>
+ <div class="card"><h3>Lengkapi kalimat ini di bukumu</h3>
+  <p>“Aku belajar karena aku ingin ______, supaya kelak aku bisa ______, dan itu penting bagiku karena ______.”</p></div>
+ <h3 style="margin-top:22px">Contoh alasan</h3>
+ <details><summary>“Aku ingin jadi perawat.”</summary><p>Alasan yang bagus. Coba tanya lagi: pelajaran apa hari ini yang paling dekat dengan cita-cita itu? Hubungkan satu per satu.</p></details>
+ <details><summary>“Aku belum tahu cita-citaku.”</summary><p>Tidak apa-apa. Mulailah dari yang kecil: ingin paham, ingin bangga pada diri sendiri, atau ingin membantu keluarga. Alasan boleh berubah seiring waktu.</p></details>
+ <details><summary>“Aku belajar supaya tidak dimarahi.”</summary><p>Rasa takut bisa menggerakkan, tetapi cepat habis. Coba cari satu hal yang membuatmu ingin belajar, bukan takut tidak belajar.</p></details>
+ <div class="note">Tanya dirimu: apa satu hal yang akan kuhargai dari diriku tahun depan jika hari ini aku mau mencoba?</div>
+</section>
+
+<section class="pg" id="jurus">
+ <h2>Jurus Belajar</h2>
+ <p>Tidak semua cara cocok untuk semua orang. Coba satu jurus selama tiga hari, lalu nilai apakah cocok untukmu.</p>
+ <details open><summary>1. Pomodoro mini</summary><p>Belajar 15 menit penuh, istirahat 5 menit. Ulangi tiga kali. Simpan HP di tempat yang tidak terjangkau.</p></details>
+ <details><summary>2. Satu halaman, satu pertanyaan</summary><p>Setelah membaca satu halaman, tutup buku dan tulis satu pertanyaan serta jawabannya dengan kata-katamu sendiri.</p></details>
+ <details><summary>3. Ajari teman bayangan</summary><p>Jelaskan materi dengan suara pelan kepada boneka, cermin, atau adikmu. Bagian yang sulit dijelaskan adalah bagian yang perlu diulang.</p></details>
+ <details><summary>4. Peta warna</summary><p>Ringkas satu bab menjadi satu lembar: tulis kata kunci, beri warna, lalu hubungkan dengan garis. Cocok untuk yang suka visual.</p></details>
+ <details><summary>5. Hadiah kecil</summary><p>Tentukan hadiah sederhana setelah target hari ini selesai, misalnya camilan atau lagu favorit. Otak suka tahu bahwa usaha ada hasilnya.</p></details>
+</section>
+
+<section class="pg" id="kisah">
+ <h2>Kisah Inspiratif</h2>
+ <p>Tiga kisah rekaan. Namanya dan ceritanya dibuat untuk renungan, bukan tentang siswa nyata.</p>
+ <details open><summary>Raka dan catatan 10 menit</summary><p>Raka sering menyerah pada matematika. Ia tidak langsung belajar satu jam, hanya 10 menit setiap sore. Dua minggu kemudian ia berani bertanya di kelas. <b>Renungan:</b> langkah kecil yang rutin lebih kuat dari semangat besar yang sebentar.</p></details>
+ <details><summary>Sari yang menemukan alasannya</summary><p>Sari bosan pada pelajaran IPA sampai ia sadar ingin membantu neneknya yang sakit gula. Ia mulai membaca tentang makanan sehat. <b>Renungan:</b> belajar jadi hidup ketika terhubung dengan orang yang kita sayangi.</p></details>
+ <details><summary>Doni yang berani bercerita</summary><p>Doni merasa tidak mampu dan diam saja. Suatu hari ia mampir ke ruang BK dan bercerita. Ia pulang dengan satu rencana kecil. <b>Renungan:</b> meminta teman bercerita bukan tanda lemah, tapi tanda berani.</p></details>
+</section>
+
+<section class="pg" id="tantangan">
+ <h2>Tantangan Belajar</h2>
+ <p>Pikirkan dulu jawabanmu, baru buka “Lihat jawabanku”. Ini latihan, bukan penilaian.</p>
+ <div id="soal"></div>
+ <h3 style="margin-top:24px">Misi 7 hari</h3>
+ <ol class="m">
+  <li>Hari 1: Tulis alasan belajarmu dan tempel di meja.</li>
+  <li>Hari 2: Pilih satu jurus dan coba 15 menit.</li>
+  <li>Hari 3: Rapikan tempat belajarmu dan jauhkan gawai.</li>
+  <li>Hari 4: Tanyakan satu hal yang belum paham kepada guru atau teman.</li>
+  <li>Hari 5: Selesaikan satu tugas yang sudah lama kamu tunda.</li>
+  <li>Hari 6: Ajari satu hal kepada orang lain.</li>
+  <li>Hari 7: Tulis apa yang berubah, lalu beri dirimu hadiah kecil.</li>
+ </ol>
+</section>
+
+<section class="pg" id="jurnal">
+ <h2>Jurnal Targetku</h2>
+ <p>Buat target yang spesifik dan kecil. Isi tabel ini lalu salin ke buku jurnal atau cetak. Isian di layar tidak tersimpan, jadi jangan lupa disalin. Guru BK akan memeriksa buku jurnalmu secara berkala.</p>
+ <div class="tw"><table>
+  <thead><tr><th>Target minggu ini</th><th>Langkah kecilnya</th><th>Hari/jam</th><th>Selesai?</th></tr></thead>
+  <tbody>
+   <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+   <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+   <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+  </tbody></table></div>
+ <h3 style="margin-top:22px">Refleksi akhir minggu</h3>
+ <ol class="m"><li>Apa yang berhasil kulakukan?</li><li>Apa yang menghambatku?</li><li>Apa satu langkah kecil untuk minggu depan?</li></ol>
+ <p class="noprint"><button class="btn" onclick="window.print()">Cetak jurnal</button></p>
+</section>
+
+<section class="pg" id="konselor">
+ <h2>Ngobrol dengan Konselor</h2>
+ <p>Kamu tidak harus menghadapi semuanya sendirian. Guru BK siap mendengarkan tanpa menghakimi. Kamu boleh memilih apa yang ingin kamu ceritakan.</p>
+ <div class="grid">
+  <div class="card"><h3>Datang ke ruang BK</h3><p>Mampirlah saat istirahat atau pulang sekolah. Pintu ruang BK terbuka untukmu, tanpa janji temu pun tidak apa-apa.</p></div>
+  <div class="card"><h3>Lewat wali kelas</h3><p>Malu datang sendiri? Minta wali kelas atau teman yang kamu percaya untuk mengantarmu ke guru BK.</p></div>
+  <div class="card"><h3>Kotak curhat</h3><p>Tulis ceritamu di kertas dan masukkan ke kotak tertutup di ruang BK. Kamu boleh tidak menulis nama.</p></div>
+ </div>
+ <div class="note"><b>Butuh bantuan segera?</b> Jika kamu merasa sangat tertekan atau ingin menyakiti dirimu, jangan sendirian. Segera temui guru, orang tua, atau orang dewasa yang kamu percaya, dan katakan bahwa kamu butuh bantuan sekarang.</div>
+</section>
+</main>
+<footer>NYALA · Nyalakan Semangat Belajarmu<br>Media pendamping layanan BK, bukan pengganti konseling tatap muka.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+var P=[["beranda","Beranda","Mulai dari sini"],["cek","Cek Motivasiku","10 pernyataan, skor langsung muncul"],["alasan","Alasanku Belajar","Temukan alasan dari dalam dirimu"],["jurus","Jurus Belajar","5 cara belajar yang mudah dicoba"],["kisah","Kisah Inspiratif","3 kisah dan renungan"],["tantangan","Tantangan Belajar","5 soal situasi dan misi 7 hari"],["jurnal","Jurnal Targetku","Target mingguan dan refleksi"],["konselor","Ngobrol BK","Ruang BK, wali kelas, kotak curhat"]];
+var $=function(i){return document.getElementById(i)};
+$("nav").innerHTML=P.map(function(p){return '<a href="#'+p[0]+'" data-p="'+p[0]+'">'+p[1]+'</a>'}).join("");
+$("menu").innerHTML=P.slice(1).map(function(p){return '<a class="card" href="#'+p[0]+'"><h3>'+p[1]+'</h3><p>'+p[2]+'</p></a>'}).join("");
+function route(){var h=(location.hash||"#beranda").slice(1);if(!$(h))h="beranda";
+ document.querySelectorAll(".pg").forEach(function(s){s.classList.toggle("on",s.id===h)});
+ document.querySelectorAll("#nav a").forEach(function(a){a.removeAttribute("aria-current");if(a.dataset.p===h){a.setAttribute("aria-current","page");a.scrollIntoView({inline:"center",block:"nearest"})}});
+ document.title=(h==="beranda"?"":P.filter(function(p){return p[0]===h})[0][1]+" – ")+"NYALA";window.scrollTo(0,0)}
+window.addEventListener("hashchange",route);route();
+
+var S=["Aku tahu alasan aku bersekolah dan belajar.","Aku mulai mengerjakan tugas tanpa harus disuruh.","Aku tetap mencoba saat pelajaran terasa sulit.","Aku punya target belajar yang jelas.","Aku percaya aku mampu memahami pelajaran jika berusaha.","Aku bisa mengatur waktu belajar dengan cukup baik.","Aku bisa menjauhi gangguan, seperti gawai, saat belajar.","Aku berani bertanya jika belum paham.","Aku merasa senang ketika berhasil memahami sesuatu.","Aku punya orang yang mendukung belajarku."];
+var L=["Tidak pernah","Kadang","Sering","Selalu"],A=[];
+$("qs").innerHTML=S.map(function(t,i){return '<div class="q"><p>'+(i+1)+'. '+t+'</p><div class="opts" data-i="'+i+'">'+L.map(function(l,k){return '<button type="button" aria-pressed="false" data-v="'+(k+1)+'">'+l+'</button>'}).join("")+'</div></div>'}).join("");
+$("qs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var o=b.parentNode;
+ o.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");A[+o.dataset.i]=+b.dataset.v;hit()});
+function hit(){var n=A.filter(Boolean).length;if(n<10){$("hasil").innerHTML="<b>"+n+" dari 10</b> terjawab. Lengkapi semua untuk melihat skormu.";return}
+ var s=A.reduce(function(a,b){return a+b},0),k,m;
+ if(s>=33){k="Tinggi";m="Semangatmu sudah menyala. Pertahankan dengan target baru yang sedikit menantang, dan bagikan caramu kepada teman."}
+ else if(s>=25){k="Sedang";m="Kamu punya modal yang baik. Cari bagian yang masih rendah, lalu coba satu jurus di halaman Jurus Belajar."}
+ else{k="Rendah";m="Tidak apa-apa, ini bukan vonis. Ini tanda bahwa kamu butuh teman. Mulailah dari Alasanku Belajar dan ceritakan kepada guru BK jika mau."}
+ $("hasil").innerHTML='<div class="big">'+s+' / 40 · '+k+'</div><p>'+m+'</p><p><a href="#alasan">Lanjut ke Alasanku Belajar</a></p>'}
+$("reset").onclick=function(){A=[];document.querySelectorAll(".opts button").forEach(function(x){x.setAttribute("aria-pressed","false")});hit();window.scrollTo(0,0)};
+
+var Q=[["Kamu menunda tugas sampai malam sebelum dikumpulkan. Apa langkah pertamamu besok?","Bagi tugas jadi bagian kecil, tentukan jam mulai yang pasti, dan kerjakan 15 menit pertama dulu. Memulai itu bagian tersulit."],
+["Kamu mendapat nilai jelek padahal sudah belajar. Apa yang kamu lakukan?","Lihat bagian mana yang salah, bukan menyalahkan diri. Tanyakan ke guru, lalu coba jurus belajar yang berbeda."],
+["HP terus berbunyi saat kamu belajar.","Taruh HP di ruangan lain atau mode senyap selama 15 menit. Buka lagi saat waktu istirahat."],
+["Temanmu bilang belajar itu membosankan dan mengajakmu menyontek.","Tolak dengan tenang dan tawarkan belajar bersama. Kamu tetap bisa berteman tanpa ikut menyontek."],
+["Kamu merasa tidak mampu dan ingin menyerah.","Ingat kisah Raka: mulai dari 10 menit. Ceritakan perasaanmu kepada orang yang kamu percaya atau guru BK."]];
+$("soal").innerHTML=Q.map(function(q,i){return '<div class="q"><p>Situasi '+(i+1)+': '+q[0]+'</p><details><summary>Lihat jawabanku</summary><p>'+q[1]+'</p></details></div>'}).join("");
+
+try{new QRCode($("qrbox"),{text:/claude/.test(location.hostname)?"https://claude.ai/artifact/1UMCEZ8ettwosMLfpaU5nm":location.href.split("#")[0],width:180,height:180,correctLevel:QRCode.CorrectLevel.M})}catch(e){$("qrbox").textContent="Kode QR gagal dimuat."}
+</script>
+</body>
+</html>
